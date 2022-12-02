@@ -1,3 +1,8 @@
 [user]
 	email = ameerimtiaz4@gmail.com
-	name = ameer
+	name = Ameer Imtiaz
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
