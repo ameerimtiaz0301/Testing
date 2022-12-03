@@ -1,5 +1,10 @@
 {
   "devDependencies": {
-    "cypress-xpath": "^2.0.1"
+    "@vue/cli-service": "^5.0.8",
+    "cypress-xpath": "^2.0.1",
+    "vue": "^3.2.45"
+  },
+  "dependencies": {
+    "cypress": "^11.2.0"
   }
 }
