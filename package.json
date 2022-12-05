@@ -6,5 +6,22 @@
   },
   "dependencies": {
     "cypress": "^11.2.0"
-  }
+  },
+  "name": "cypress-projects",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameerimtiaz0301/Cypress-Projects.git"
+  },
+  "author": "salman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ameerimtiaz0301/Cypress-Projects/issues"
+  },
+  "homepage": "https://github.com/ameerimtiaz0301/Cypress-Projects#readme",
+  "description": ""
 }
