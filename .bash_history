@@ -28,3 +28,15 @@ git commit cypress
 git pull
 clear
 exit
+git status
+git add cypress/e2e/Quick-eats-project/users.cy.js
+git status
+git stash .bash_history
+git stash
+git status
+git add cypress/e2e/Quick-eats-project/users.cy.js
+git status
+clear
+npm cypress open
+clear
+npx cypress open
