@@ -88,3 +88,20 @@ npx cypress open
 npx cypress open
 npx cypress open
 npx cypress open
+npx cypress open
+git status
+git status
+git add cypress/e2e/Quick-eats-project/login.cy.js
+git status
+git add cypress/videos
+git status
+git add cypress/e2e/Quick-eats-project/Adminlogin.cy.js
+git add .bash_history
+git add cypress/e2e/Quick-eats-project/users.cy.js
+git status
+git commit -a -m Admin login test cases
+git commit -a -m admin_login_test_cases
+git push origin
+git push
+git status
+git push

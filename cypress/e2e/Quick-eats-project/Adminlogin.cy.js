@@ -8,6 +8,7 @@ describe('Log in', function(){
     cy.get('input[type="password"]').type('123456')
     cy.get('[type="checkbox"]').check()
     cy.get('.btn').contains('Sign in').should('be.visible').click()
+    cy.get("span").should('be.visible').should('have.text',"User Not Found")
     cy.wait(3000)
     })
   it('SignIn with wrong Password', function(){
