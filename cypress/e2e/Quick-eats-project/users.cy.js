@@ -2,7 +2,7 @@
 
 describe('Users view functions', function(){
     beforeEach(() => {
-        cy.viewport('macbook-13')
+        cy.viewport(1200,1000)
     })
     
     it('Sign in', function(){
@@ -36,7 +36,13 @@ describe('Users view functions', function(){
         cy.get('input[placeholder="Password"]').type('123123')
         cy.get('input[placeholder="Confirm Password"]').type('123123')
         cy.get('.btn').contains('Submit').should('be.visible').dblclick()
-        // response is getting failed and cannot create a user need to look at what the reason i
+        // response is getting failed and cannot create a user need to look at what the reason is
+        cy.go('back')
+     })
+     it('View Address list', function(){
+        cy.xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[14]/a').scrollIntoView().click()
+        cy.get('div[class="table-responsive"]')
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[3]/td[7]/a').contains('Asad ur Rehman Dev').click()
      })
 
 })
