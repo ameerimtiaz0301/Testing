@@ -6,11 +6,11 @@ describe('order view', function () {
         cy.get('[type="checkbox"]').check()
         cy.get('.btn').contains('Sign in').should('be.visible').click()
     })
-    it('Profile', function(){
-        cy.get('.router-link-active').contains('Khan Muhammad').scrollIntoView().click()
-        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[1]/form/button').should('be.visible').click()
-      //  cy.get('.sidebar').get('[class="active router-link-exact-active nav-link"]').contains(' Dashbaord').scrollIntoView().click()
-    })
+    // it('Profile', function(){
+    //     cy.get('.router-link-active').contains('Khan Muhammad').scrollIntoView().click()
+    //     cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[1]/form/button').should('be.visible').click()
+    //   //  cy.get('.sidebar').get('[class="active router-link-exact-active nav-link"]').contains(' Dashbaord').scrollIntoView().click()
+    // })
 
 
 
@@ -32,19 +32,19 @@ describe('order view', function () {
 
 
 
-// //     it('Settings & rate list view', function () {
-// //         cy.get('[id="2"]').click().xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[8]/ul/li[1]/a').click()
-// //         cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[2]/div/table/tbody/tr[13]/td[11]/div/a[2]').click()
-// //     })
-// //     it('Add rate range', function () {
-// //         cy.get('[class="d-flex justify-content-between"]').get("h2").contains("Rate Detail")
-// //         cy.get('[class="btn btn-sm btn-secondary"]').should('be.visible').contains('Add Rate Range').click()
-// //         cy.get("h1").contains("RateRange Create")
-// //         cy.get('input[placeholder="Start Range"]').type('2000')
-// //         cy.get('input[placeholder="End Range"]').type('5000')
-// //         cy.get('input[placeholder="Range Price"]').type('100')
-// //         cy.get("select").select("Multiple").invoke("val").should("eq", "Multiple")
-// //         //automatically retries invoking the specified method until 
-// //         //the returned value satisfies the attached assertions.
-// //     })
+    it('Settings & rate list view', function () {
+        cy.get('[id="2"]').click().xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[8]/ul/li[1]/a').click()
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[2]/div/table/tbody/tr[13]/td[11]/div/a[2]').click()
+    })
+    it('Add rate range', function () {
+        cy.get('[class="d-flex justify-content-between"]').get("h2").contains("Rate Detail")
+        cy.get('[class="btn btn-sm btn-secondary"]').should('be.visible').contains('Add Rate Range').click()
+        cy.get("h1").contains("RateRange Create")
+        cy.get('input[placeholder="Start Range"]').type('2000')
+        cy.get('input[placeholder="End Range"]').type('5000')
+        cy.get('input[placeholder="Range Price"]').type('100')
+        cy.get("select").select("Multiple").invoke("val").should("eq", "Multiple")
+        //automatically retries invoking the specified method until 
+        //the returned value satisfies the attached assertions.
+    })
  })
