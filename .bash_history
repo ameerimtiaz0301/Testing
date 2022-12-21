@@ -105,3 +105,18 @@ git push origin
 git push
 git status
 git push
+npx cypress open
+clear
+git status
+git add .bash_history
+git add cypress/e2e/Quick-eats-project/Adminlogin.cy.js
+git status
+git commit -a
+git push
+git status
+git stash
+git status
+git push
+git checkout origin
+clear
+exit
