@@ -2,7 +2,7 @@ module.exports = {
   // projectId: 'hyb4kp',
   projectId: "15rwu3",
 
-  watchForFileChanges: false,
+  //watchForFileChanges: false,
 
   e2e: {
     setupNodeEvents(on, config) {

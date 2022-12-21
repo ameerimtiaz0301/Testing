@@ -11,6 +11,23 @@ describe('Log in', function(){
     cy.get("span").should('be.visible').should('have.text',"User Not Found")
     cy.wait(3000)
     })
+    it('SignIn with incorrect format @', function(){
+      cy.get('input[type="email"]').type('khudidevicesgmail.com')
+      cy.get('input[type="password"]').type('123456')
+      cy.get('[type="checkbox"]').check()
+      cy.get('.btn').contains('Sign in').should('be.visible').click()
+      cy.get('[type="email"]').invoke('prop', 'validationMessage')
+        .should('equal', "Please include an '@' in the email address. 'khudidevicesgmail.com' is missing an '@'.")
+      cy.wait(3000)
+      })
+    it('SignIn with . dot missing in email', function(){
+        cy.get('input[type="email"]').type('khudidevices@gmailcom')
+        cy.get('input[type="password"]').type('123456')
+        cy.get('[type="checkbox"]').check()
+        cy.get('.btn').contains('Sign in').should('be.visible').click()
+        cy.get("span").should('be.visible').should('have.text',"email must be an email")
+        cy.wait(3000)
+       })
   it('SignIn with wrong Password', function(){
      cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')
      cy.get('input[type="password"]').type('12345678')
@@ -28,11 +45,17 @@ describe('Log in', function(){
   it('SignIn with out Email', function(){
     cy.get('input[type="password"]').type('123456')
     cy.get('.btn').contains('Sign in').should('be.visible').click()
+    cy.get('input:invalid').should('be.empty').should('have.length', 1)
+    cy.get('[type="email"]').invoke('prop', 'validationMessage')
+      .should('equal', 'Please fill out this field.')
     cy.wait(3000)
     })
   it('SignIn with out Password', function(){
       cy.get('input[type="email"]').type('khanmuammadmalik@gmail.com')
       cy.get('.btn').contains('Sign in').should('be.visible').click()
+      cy.get('input:invalid').should('be.empty').should('have.length', 1)
+      cy.get('[type="password"]').invoke('prop', 'validationMessage')
+        .should('equal', 'Please fill out this field.')
       cy.wait(3000)
       })
   it('SignIn with correct email & password', function(){

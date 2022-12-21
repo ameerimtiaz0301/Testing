@@ -105,3 +105,28 @@ git push origin
 git push
 git status
 git push
+git status
+git checkout main
+git checkout salman
+git status
+git stash
+git stash
+git status
+git checkout main
+git pull main
+git pull
+git checkout ameer
+git checkout main
+git checkout ameer
+git checkout main
+git pull 
+git push
+git status
+git checkout ameer
+git commit -a
+git rebase
+git checkout main
+git rebase
+git checkout ameer
+git pull
+git push
