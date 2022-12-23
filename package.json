@@ -5,7 +5,8 @@
     "vue": "^3.2.45"
   },
   "dependencies": {
-    "cypress": "^11.2.0"
+    "cypress": "^11.2.0",
+    "cypress-real-events": "^1.7.4"
   },
   "name": "cypress-projects",
   "version": "1.0.0",
