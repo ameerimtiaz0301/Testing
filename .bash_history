@@ -130,3 +130,18 @@ git rebase
 git checkout ameer
 git pull
 git push
+git status
+git stash
+git status
+git checkout salman
+git checkout ameer
+npx cypress open
+npx cypress open
+npx cypress open
+git status
+exit
+npx cypress open
+npm install -D cypress-xpath
+npx cypress open
+npx cypress open
+npx cypress open
