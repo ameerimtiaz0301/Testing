@@ -7,7 +7,7 @@ describe('order view', function () {
         cy.get('.btn').contains('Sign in').should('be.visible').click()
     })
     it('Profile', function(){
-        cy.get('.sidebar').contains('khan Muhammad').scrollIntoView().click()
+        cy.get('.sidebar').contains('khan Muhammad').scrollIntoView().click({force: true})
         cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[1]/form/button').should('be.visible').dblclick()
         cy.get('.sidebar').contains(' Dashbaord').scrollIntoView().click()
     })

@@ -1,6 +1,6 @@
 [user]
-	email = ameerimtiaz4@gmail.com
-	name = Ameer Imtiaz
+	email = salmanrafiq226@gmail.com
+	name = salmanrafiq226
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
