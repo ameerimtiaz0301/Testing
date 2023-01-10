@@ -6,22 +6,22 @@
      loginPage.enterpassword()
      loginPage.checkbox()
      loginPage.clicksubmitbutton()
+ })
 
-// describe('Order Customer Report', function(){
-
-// it('User', function(){
-//     cy.visit('https://deliverydev.quickeats.co.uk/login')
-//     cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com').get('[type="password"]').type('123456')
-//     cy.get('[type="checkbox"]').check()
-//     cy.get('.btn').contains('Sign in').should('be.visible').click().wait(1000)
-
+    it('Order User Report', function () {
     cy.get('.main_side > :nth-child(4) > .nav-link').contains('Orders Customer Report').click()
-    cy.get('.row > :nth-child(1) > .form-control').select(6)
+    cy.get('.row > :nth-child(1) > .form-control').select(0)
     cy.get(':nth-child(2) > .v3dp__datepicker > .v3dp__input_wrapper > .form-control').dblclick()
-    //cy.get('[class="v3dp__heading"]').contains('January 2023').click({force:true})
-    //cy.get('[class="v3dp__heading__center"]').contains('2023').click()
-   // cy.get('[class="selected"]').contains('2022').dblclick()
-   cy.get('[class="v3dp__heading"]').contains('January 2023').find('input').eq(0)
-   .invoke('val').should('eq', '2020-05-01')
-})
+    cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/div[2]/div/div[4]/div[1]').contains('January 2023').click()
+    cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/div[2]/div/div[3]').contains('2023').click()
+    cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/div[2]/div/div[2]/div[2]/div/button[1]/span').contains('2020').click()
+    cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/div[2]/div/div[3]/div[2]/div/button[4]/span').contains('Apr').click()
+    cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/div[2]/div/div[4]/div[2]/div[2]/button[27]/span').contains('25').click()
+    cy.get(':nth-child(3) > .v3dp__datepicker > .v3dp__input_wrapper > .form-control').dblclick()
+    cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/div[3]/div/div[4]/div[2]/div[2]/button[16]/span').click({force: true})
+    cy.get('[class="btn btn-sm btn-primary"]').contains('Search').click().wait(1000)
+  })
+   it('Download PDF Invoice', function () {
+   cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[4]/button').contains('Download PDF Invoice').click()
+  })
 

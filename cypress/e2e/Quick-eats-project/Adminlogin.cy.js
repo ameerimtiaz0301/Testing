@@ -1,11 +1,11 @@
 //import "cypress-real-events/support"
 describe('Log in', function(){
   // context('Cookies', () => {
-  // beforeEach(() => {
+  beforeEach(() => {
   //   Cypress.Cookies.debug(true) 
-  //   cy.visit('https://deliverydev.quickeats.co.uk/login')
+    cy.visit('https://deliverydev.quickeats.co.uk/login')
   //   cy.clearCookies()
-  //   })
+   })
 
   it('SignIn with check box', function(){
     cy.get('input[type="email"]').type('ameermughal0301@gmail.com').get('input[placeholder="Password"]').type('123456')
