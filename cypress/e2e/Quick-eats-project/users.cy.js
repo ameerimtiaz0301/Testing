@@ -24,6 +24,7 @@ describe('Users Search > Detail > Add User functions', function(){
     cy.get(':nth-child(8) > .form-control').click({force: true}).type('123456')
     cy.get(':nth-child(9) > .form-control').click({force: true}).type('123456')
     cy.get('.w-100').contains('Submit').dblclick({force: true})
+    
 
  })
 })
