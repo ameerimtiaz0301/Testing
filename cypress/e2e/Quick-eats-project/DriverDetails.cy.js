@@ -42,7 +42,7 @@ describe('Drivers details and edit a driver', function(){
         cy.get('.search > :nth-child(3)').contains('Search').dblclick({force:true})
         cy.wait(3000)
         cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').find('[class="btn-group mr-2"]')
-        .find('[class="btn btn-sm btn-success me-2"]').contains('Rider Location').click({force:true})
+        .find('[class="btn btn-sm btn-success me-2"]').contains('Rider Location')
     })
     
 })
