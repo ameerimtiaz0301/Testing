@@ -8,7 +8,7 @@ describe('Users Search > Detail > Add User functions', function(){
 //     })
 //    it('users', function(){
  // cy.xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[2]/a').click()
-        cy.get('.main_side > :nth-child(2) > .nav-link').click()
+    cy.get('.main_side > :nth-child(2) > .nav-link').click()
     cy.get('input[type="text"]').type('khanmuhammadmalik@gmail.com', {force: true})
     //cy.get('input[placeholder="Search with Name,Email,Phone,Bussiness name"]').type('newcutomer@gmail.com',{force: true})
     cy.get('[class="btn btn-primary"]').contains('Search').dblclick({force: true})
