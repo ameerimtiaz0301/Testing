@@ -1,13 +1,14 @@
-describe('Settings Page', function () {
- it('Sign in', function () {
-    cy.visit('https://deliverydev.quickeats.co.uk/login')
-    cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com').get('[type="password"]').type('123456')
-    cy.get('[type="checkbox"]').check()
-    cy.get('.btn').contains('Sign in').should('be.visible').click() 
- })
- it('Settings & Rate list view', function () {
+import { LoginPage } from "../../Pages/Loginpage.cy"
+const loginPage = new LoginPage()
+    it('Log in', function () {
+        loginPage.navigate('https://deliverydev.quickeats.co.uk/login')
+        loginPage.enteremail()
+        loginPage.enterpassword()
+        loginPage.checkbox()
+        loginPage.clicksubmitbutton()
+})
+    it('Settings & Rate list view', function () {
         cy.get('[id="2"]').click().xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[8]/ul/li[1]/a').click()
-       // cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[2]/div/table/tbody/tr[13]/td[11]/div/a[2]').click()
         cy.get('.btn[class="btn btn-sm btn-primary align-self-center"]').contains('Add Rate').click()
         cy.get(':nth-child(2) > .form-control').select(1)
         cy.get(':nth-child(3) > .form-control').type('15')
@@ -30,9 +31,23 @@ describe('Settings Page', function () {
 
         cy.get(':nth-child(6) > .btn-group > .btn-secondary').contains('Edit').should('be.visible').click()
         cy.get('input[placeholder="Range Price"]').should('have.value','6.00').clear().type('7')
-       // cy.get(':nth-child(5) > .form-control').select(1,{ force: true }).wait(1000)
         cy.get('.btn[class="w-100 btn btn-lg btn-primary"]').contains('Submit').click({ force: true })
         cy.get(':nth-child(11) > .btn-group > .btn-danger').click()
        
 })
+    it('Create Package', function () {
+        cy.get('[id="2"]').click({force: true}).xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[8]/ul/li[2]/a').click()
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[2]/div/a').contains('Add Package').click()
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/main/form/div[1]/input').click().type('Testing')
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/main/form/div[2]/input').click().type('Testinglabel')
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/main/form/div[3]/input').click().type('Testingdetail')
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/main/form/div[4]/div/label').selectFile("C:/Users/salman-pc/Downloads/test.pdf")
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/main/form/div[5]/input').click().type('250')
+        cy.xpath('//*[@id="app"]/div/div/div[2]/main/main/form/div[6]/select').select(0)
+        cy.get('[class="w-100 btn btn-lg btn-primary"]').contains('Submit').should('be.visible').click().wait(2000)
+})
+
+it('Create Payment Methods', function () {
+    cy.get(':nth-child(3) > .active').click()
+    cy.get('.d-flex > .btn').contains('Add Payment Method').click()
 })
