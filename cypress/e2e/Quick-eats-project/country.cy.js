@@ -5,21 +5,31 @@ describe('Settings Page', function () {
        cy.get('[type="checkbox"]').check()
        cy.get('.btn').contains('Sign in').should('be.visible').click() 
     })
-    it('Settings & Rate list view', function () {
-        cy.get('[id="2"]').click().xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[8]/ul/li[6]/a').click()
-        cy.get('.btn[class="btn btn-sm btn-primary align-self-center"]').contains('Add Country').click()
-        
+    it('Settings & Country Page', function () {
+       cy.get('[id="2"]').click().xpath('//*[@id="app"]/div/div/div[1]/nav/ul/li[8]/ul/li[6]/a').click()
     })
-      
-      
-     
-       
-        //    cy.get(':nth-child(2) > .form-control').select(1)
-        //    cy.get(':nth-child(3) > .form-control').type('15')
-        //    cy.get(':nth-child(4) > .form-control').type('25')
-        //    cy.get(':nth-child(5) > .form-control').type('15')
-        //    cy.get(':nth-child(6) > #flexCheckDefault').check()
-        //    cy.get(':nth-child(7) > #flexCheckDefault').check()
-        //    cy.get(':nth-child(9) > .form-control').select(2)
-        //    cy.get('.btn[class="w-100 btn btn-lg btn-primary"]').contains('Submit').click()
-       })
+    it('Create Country', function () {       
+       cy.get('.btn[class="btn btn-sm btn-primary align-self-center"]').contains('Add Country').click()
+       cy.get(':nth-child(1) > .form-control').click({force: true}).type('Test')
+       cy.get(':nth-child(2) > .form-control').click({force: true}).type('12345')
+       cy.get(':nth-child(3) > .form-control').click({force: true}).type('TS')
+       cy.get(':nth-child(4) > .form-control').click({force: true}).type('TS')
+       cy.get(':nth-child(5) > .form-control').click({force: true}).type('+5')
+       cy.get(':nth-child(6) > .form-control').click({force: true}).type('Testing')
+       cy.get(':nth-child(7) > .form-control').click({force: true}).type('Test123')
+       cy.get(':nth-child(8) > .form-control').select(0)
+       cy.get('#flexCheckDefault').check()
+       cy.get('.w-100').contains('Submit').click().wait(1000)
+    })
+    it('Update Created Country', function () {
+       cy.get('.row > :nth-child(3)').last()
+       cy.get(':nth-child(10) > :nth-child(9) > .btn-group > .btn-secondary').contains('Edit').click().wait(1000)
+       cy.get(':nth-child(7) > .form-control').click({force: true}).type('Test123')
+       cy.get(':nth-child(8) > .form-control').select(1)
+       cy.get('.w-100').contains('Submit').click().wait(1000)
+    })
+    it('Delete Created Country', function () {
+       cy.get('.row > :nth-child(3)').last()
+       cy.get(':nth-child(10) > :nth-child(9) > .btn-group > .btn-danger').contains('Delete').dblclick()
+     })
+})
