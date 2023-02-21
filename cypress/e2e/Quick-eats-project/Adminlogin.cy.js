@@ -4,8 +4,8 @@ describe('Log in', function(){
   })
 
 it('SignIn with wrong Email', function(){
-  cy.get('input[type="email"]').type('khudidevices@gmail.com')
-  cy.get('input[type="password"]').type('123456')
+  cy.get('input[type="email"]').type('khudidevice@gmail.com')
+  cy.get('input[type="password"]').type('12345644')
   cy.get('[type="checkbox"]').check()
   cy.get('.btn').contains('Sign in').should('be.visible').click()
   cy.get("span").should('be.visible').should('have.text',"User Not Found")

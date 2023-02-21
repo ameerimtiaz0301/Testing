@@ -10,8 +10,8 @@ describe('Settings Page', function () {
           // cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[2]/div/table/tbody/tr[13]/td[11]/div/a[2]').click()
            cy.get('.btn[class="btn btn-sm btn-primary align-self-center"]').contains('Add Rate').click()
            cy.get(':nth-child(2) > .form-control').select(1)
-           cy.get(':nth-child(3) > .form-control').type('15')
-           cy.get(':nth-child(4) > .form-control').type('25')
+          cy.get(':nth-child(3) > .form-control').type('15')
+          cy.get(':nth-child(4) > .form-control').type('25')
            cy.get(':nth-child(5) > .form-control').type('15')
            cy.get(':nth-child(6) > #flexCheckDefault').check()
            cy.get(':nth-child(7) > #flexCheckDefault').check()
@@ -19,7 +19,7 @@ describe('Settings Page', function () {
            cy.get('.btn[class="w-100 btn btn-lg btn-primary"]').contains('Submit').click()
            cy.go('back').wait(3000)
        })
-       it('Add Rate Range in Add Rate', function () {
+       it('In View Add Rate Range in Add Rate', function () {
            cy.get('.btn[class="btn btn-sm btn-primary me-2"]').contains('View').should('be.visible').click({force: true}).wait(2000)
            cy.get('.btn[class="btn btn-sm btn-secondary"]').contains('Add Rate Range').should('be.visible').click({force: true}).wait(1000)
            cy.get('input[placeholder="Start Range"]').type('4')

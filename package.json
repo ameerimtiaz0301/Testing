@@ -1,10 +1,26 @@
 {
   "devDependencies": {
     "@vue/cli-service": "^5.0.8",
+    "cypress": "^12.2.0",
+    "cypress-file-upload": "^5.0.8",
     "cypress-xpath": "^2.0.1",
     "vue": "^3.2.45"
   },
-  "dependencies": {
-    "cypress": "^11.2.0"
-  }
+  "name": "cypress-projects",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameerimtiaz0301/Cypress-Projects.git"
+  },
+  "author": "zahra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ameerimtiaz0301/Cypress-Projects/issues"
+  },
+  "homepage": "https://github.com/ameerimtiaz0301/Cypress-Projects#readme",
+  "description": ""
 }
