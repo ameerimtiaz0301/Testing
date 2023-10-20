@@ -13,7 +13,7 @@ describe('Log in', function(){
     cy.get('.btn[type="submit"]').click()
     })
   it('SignIn with wrong Email', function(){
-    cy.get('input[type="email"]').type('khudidevices@gmail.com')
+    cy.get('input[type="email"]').type('khudidevices1@gmail.com')
     cy.get('input[type="password"]').type('123456')
     cy.get('[type="checkbox"]').check()
     cy.get('.btn').contains('Sign in').should('be.visible').click()
@@ -40,12 +40,20 @@ describe('Log in', function(){
       cy.get('.btn').contains('Sign in').should('be.visible').click()
 
       })
-  it('SignIn with correct email & password', function(){
-      cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')
-      cy.get('input[type="password"]').type('123456')
-      cy.get('[type="checkbox"]').check()
-      cy.get('.btn').contains('Sign in').should('be.visible').click()
+      it('SignIn with Correct Email & Log Out That User', function(){
+        cy.get('input[type="email"]').type('khudidevices@gmail.com')
+        cy.get('input[type="password"]').type('123456')
+        cy.get('[type="checkbox"]').check()
+        cy.get('.btn').contains('Sign in').should('be.visible').click().wait(3000)
+        cy.get('#logoutlink').click()
+   
+        })
+  // it('SignIn with correct email & password', function(){
+  //     cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')
+  //     cy.get('input[type="password"]').type('123456')
+  //     cy.get('[type="checkbox"]').check()
+  //     cy.get('.btn').contains('Sign in').should('be.visible').click()
       
-      })
+  //     })
     })
   //})

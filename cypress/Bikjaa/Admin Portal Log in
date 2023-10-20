@@ -1,9 +1,9 @@
 import { LoginPage } from "../../Pages/Loginpage.cy"
  const loginPage = new LoginPage()
  it('Log in', function () {
-     loginPage.navigate('https://deliverydev.quickeats.co.uk/login')
-     loginPage.enteremail()
-     loginPage.enterpassword()
+     loginPage.navigate('https://admindev.bikjaa.pk/')
+     loginPage.enteremail('admin@jaabikjaa.com')
+     loginPage.enterpassword('Bikjaa@IMM2022^$')
      loginPage.checkbox()
      loginPage.clicksubmitbutton()
  })

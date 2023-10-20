@@ -2,11 +2,11 @@ export class LoginPage{
     navigate(url){
     cy.visit(url)
     }
-    enteremail(email){
-    cy.get(email)
+    enteremail(){
+    cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')
     }
-    enterpassword(password){
-    cy.get(password)
+    enterpassword(){
+    cy.get('[type="password"]').type('123456')
     }
     checkbox(){
     cy.get('[type="checkbox"]').check()
