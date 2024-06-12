@@ -1,0 +1,248 @@
+[1mdiff --git a/.bash_history b/.bash_history[m
+[1mindex 9374ed3b..2ea18f3b 100644[m
+[1m--- a/.bash_history[m
+[1m+++ b/.bash_history[m
+[36m@@ -130,3 +130,18 @@[m [mgit rebase[m
+ git checkout ameer[m
+ git pull[m
+ git push[m
+[32m+[m[32mgit status[m
+[32m+[m[32mgit stash[m
+[32m+[m[32mgit status[m
+[32m+[m[32mgit checkout salman[m
+[32m+[m[32mgit checkout ameer[m
+[32m+[m[32mnpx cypress open[m
+[32m+[m[32mnpx cypress open[m
+[32m+[m[32mnpx cypress open[m
+[32m+[m[32mgit status[m
+[32m+[m[32mexit[m
+[32m+[m[32mnpx cypress open[m
+[32m+[m[32mnpm install -D cypress-xpath[m
+[32m+[m[32mnpx cypress open[m
+[32m+[m[32mnpx cypress open[m
+[32m+[m[32mnpx cypress open[m
+[1mdiff --git a/cypress.txt b/cypress.txt[m
+[1mnew file mode 100644[m
+[1mindex 00000000..cb62d57a[m
+[1m--- /dev/null[m
+[1m+++ b/cypress.txt[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mTesting the text format which also include Second part of the txt and[m[41m [m
+[32m+[m[32mAdding an array[m[41m [m
+[32m+[m[32m[[m
+[32m+[m[32m  "cyp1",[m
+[32m+[m[32m  "cyp2",[m
+[32m+[m[32m  "cyp3",[m
+[32m+[m[32m  "cyp4"[m
+[32m+[m[32m][m
+\ No newline at end of file[m
+[1mdiff --git a/cypress/e2e/Quick-eats-project/AddDrivers.cy.js b/cypress/e2e/Quick-eats-project/AddDrivers.cy.js[m
+[1mnew file mode 100644[m
+[1mindex 00000000..da265681[m
+[1m--- /dev/null[m
+[1m+++ b/cypress/e2e/Quick-eats-project/AddDrivers.cy.js[m
+[36m@@ -0,0 +1,34 @@[m
+[32m+[m[32m/// <reference types="cypress" />[m
+[32m+[m[32mdescribe('Drivers page visit and add a driver', function(){[m
+[32m+[m[32m    beforeEach(()=>{[m
+[32m+[m[32m        cy.viewport('macbook-11')[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('Login',()=>{[m
+[32m+[m[32m        cy.visit('https://deliverydev.quickeats.co.uk/login')[m
+[32m+[m[32m        cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com').get('[type="password"]').type('123456')[m
+[32m+[m[32m        cy.get('[type="checkbox"]').check()[m
+[32m+[m[32m        cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('Visit drivers page and click on add rider button', ()=>{[m
+[32m+[m[32m        cy.get('.main_side > :nth-child(5) > .nav-link').click()[m
+[32m+[m[32m        cy.get('.pl-3').contains('Add Riders').should('be.visible').click()[m
+[32m+[m[32m        cy.wait(3000)[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('Add Rider details', function(){[m
+[32m+[m[32m        cy.get(':nth-child(1) > .form-control').type('Ameer Imtiaz',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(2) > .form-control').type('ameerimtiaz@gmail.com',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(3) > .form-control').type('03034074618',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(4) > .form-control').click({force: true}).scrollIntoView().type('1997-09-30')[m
+[32m+[m[32m        cy.get(':nth-child(5) > .form-control').type('54000',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(6) > .form-control').type('account',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(7) > .form-control').type('0412586325152321',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(8) > .form-control').type('222',{force: true})[m
+[32m+[m[32m        cy.get(':nth-child(9) > .form-control').type('abc abc abc abc abc abc',{force: true})[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[2]/form/div[12]').contains('Is Active').get(':nth-child(12) > #flexCheckDefault').check()[m
+[32m+[m[32m        cy.get('select').eq(0).select('Pakistan').should('have.value', '1')[m
+[32m+[m[32m        cy.get('select').eq(1).select('Lahore').should('have.value', '46')[m
+[32m+[m[32m        cy.get('select').eq(2).select('eBike').should('have.value', 'eBike')[m
+[32m+[m[32m        cy.get(':nth-child(17) > .form-control').type('123456')[m
+[32m+[m[32m        cy.get('.btn').contains('Submit').click()[m
+[32m+[m[32m    })[m
+[32m+[m[32m})[m
+\ No newline at end of file[m
+[1mdiff --git a/cypress/e2e/Quick-eats-project/Adminlogin.cy.js b/cypress/e2e/Quick-eats-project/Adminlogin.cy.js[m
+[1mindex e789855d..98e4e4ae 100644[m
+[1m--- a/cypress/e2e/Quick-eats-project/Adminlogin.cy.js[m
+[1m+++ b/cypress/e2e/Quick-eats-project/Adminlogin.cy.js[m
+[36m@@ -4,60 +4,65 @@[m [mdescribe('Log in', function(){[m
+     })[m
+ [m
+   it('SignIn with wrong Email', function(){[m
+[31m-    cy.get('input[type="email"]').type('khudidevices@gmail.com')[m
+[31m-    cy.get('input[type="password"]').type('123456')[m
+[31m-    cy.get('[type="checkbox"]').check()[m
+[31m-    cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[31m-    cy.get("span").should('be.visible').should('have.text',"User Not Found")[m
+[31m-    cy.wait(3000)[m
+[32m+[m[32m      cy.get('input[type="email"]').type('khudidevices@gmail.com')[m
+[32m+[m[32m      cy.get('input[type="password"]').type('123456')[m
+[32m+[m[32m      cy.get('[type="checkbox"]').check()[m
+[32m+[m[32m      cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m      cy.get("span").should('be.visible').should('have.text',"User Not Found")[m
+[32m+[m[32m      cy.wait(3000)[m
+     })[m
+[31m-    it('SignIn with incorrect format @', function(){[m
+[32m+[m[32m  it('SignIn with incorrect format @', function(){[m
+       cy.get('input[type="email"]').type('khudidevicesgmail.com')[m
+       cy.get('input[type="password"]').type('123456')[m
+       cy.get('[type="checkbox"]').check()[m
+       cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[31m-      cy.get('[type="email"]').invoke('prop', 'validationMessage')[m
+[31m-        .should('equal', "Please include an '@' in the email address. 'khudidevicesgmail.com' is missing an '@'.")[m
+[32m+[m[32m      cy.get('[type="email"]').invoke('prop', 'validationMessage').should('equal', "Please include an '@' in the email address. 'khudidevicesgmail.com' is missing an '@'.")[m
+[32m+[m[32m      cy.wait(3000)[m
+[32m+[m[32m     })[m
+[32m+[m[32m  it('SignIn with . dot missing in email', function(){[m
+[32m+[m[32m      cy.get('input[type="email"]').type('khudidevices@gmailcom')[m
+[32m+[m[32m      cy.get('input[type="password"]').type('123456')[m
+[32m+[m[32m      cy.get('[type="checkbox"]').check()[m
+[32m+[m[32m      cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m      cy.get("span").should('be.visible').should('have.text',"email must be an email")[m
+       cy.wait(3000)[m
+[31m-      })[m
+[31m-    it('SignIn with . dot missing in email', function(){[m
+[31m-        cy.get('input[type="email"]').type('khudidevices@gmailcom')[m
+[31m-        cy.get('input[type="password"]').type('123456')[m
+[31m-        cy.get('[type="checkbox"]').check()[m
+[31m-        cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[31m-        cy.get("span").should('be.visible').should('have.text',"email must be an email")[m
+[31m-        cy.wait(3000)[m
+        })[m
+   it('SignIn with wrong Password', function(){[m
+[31m-     cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')[m
+[31m-     cy.get('input[type="password"]').type('12345678')[m
+[31m-     cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[31m-     cy.get("span").should('be.visible').should('have.text',"Invalid credentials")[m
+[31m-    cy.wait(3000)[m
+[32m+[m[32m      cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')[m
+[32m+[m[32m      cy.get('input[type="password"]').type('12345678')[m
+[32m+[m[32m      cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m      cy.get("span").should('be.visible').should('have.text',"Invalid credentials")[m
+[32m+[m[32m      cy.wait(3000)[m
+     })[m
+   it('SignIn with wrong Email and Password', function(){[m
+[31m-     cy.get('input[type="email"]').type('khanmuhammad@gmail.com')[m
+[31m-     cy.get('input[type="password"]').type('12345678')[m
+[31m-     cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[31m-     cy.get("span").should('be.visible').should('have.text',"User Not Found")[m
+[31m-     cy.wait(3000)[m
+[32m+[m[32m      cy.get('input[type="email"]').type('khanmuhammad@gmail.com')[m
+[32m+[m[32m      cy.get('input[type="password"]').type('12345678')[m
+[32m+[m[32m      cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m      cy.get("span").should('be.visible').should('have.text',"User Not Found")[m
+[32m+[m[32m      cy.wait(3000)[m
+     })[m
+   it('SignIn with out Email', function(){[m
+[31m-    cy.get('input[type="password"]').type('123456')[m
+[31m-    cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[31m-    cy.get('input:invalid').should('be.empty').should('have.length', 1)[m
+[31m-    cy.get('[type="email"]').invoke('prop', 'validationMessage')[m
+[31m-      .should('equal', 'Please fill out this field.')[m
+[31m-    cy.wait(3000)[m
+[32m+[m[32m      cy.get('input[type="password"]').type('123456')[m
+[32m+[m[32m      cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m      cy.get('input:invalid').should('be.empty').should('have.length', 1)[m
+[32m+[m[32m      cy.get('[type="email"]').invoke('prop', 'validationMessage').should('equal', 'Please fill out this field.')[m
+[32m+[m[32m      cy.wait(3000)[m
+     })[m
+   it('SignIn with out Password', function(){[m
+       cy.get('input[type="email"]').type('khanmuammadmalik@gmail.com')[m
+       cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+       cy.get('input:invalid').should('be.empty').should('have.length', 1)[m
+[31m-      cy.get('[type="password"]').invoke('prop', 'validationMessage')[m
+[31m-        .should('equal', 'Please fill out this field.')[m
+[32m+[m[32m      cy.get('[type="password"]').invoke('prop', 'validationMessage').should('equal', 'Please fill out this field.')[m
+       cy.wait(3000)[m
+[31m-      })[m
+[32m+[m[32m    })[m
+[32m+[m[32m  it('Sign in with invalid input', function () {[m
+[32m+[m[32m      cy.get('[type="email"]').type('khanmuhammadmalik@gmail.com')[m
+[32m+[m[32m      cy.get('input:invalid').should('have.length', 1)[m
+[32m+[m[32m      cy.get('[type="checkbox"]').check()[m
+[32m+[m[32m      cy.get('.btn').contains('Sign in').should('be.visible').click()[m[41m [m
+[32m+[m[32m      cy.get('[type="password"]').invoke('prop', 'validationMessage').should('equal', 'Please fill out this field.')[m
+[32m+[m[32m      cy.wait(3000)[m
+[32m+[m[32m    })[m
+   it('SignIn with correct email & password', function(){[m
+       cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com')[m
+       cy.get('input[type="password"]').type('123456')[m
+[1mdiff --git a/cypress/e2e/Quick-eats-project/DriverDetails.cy.js b/cypress/e2e/Quick-eats-project/DriverDetails.cy.js[m
+[1mnew file mode 100644[m
+[1mindex 00000000..ced2da10[m
+[1m--- /dev/null[m
+[1m+++ b/cypress/e2e/Quick-eats-project/DriverDetails.cy.js[m
+[36m@@ -0,0 +1,81 @@[m
+[32m+[m[32m/// <reference types="cypress" />[m
+[32m+[m[32mdescribe('Drivers details and edit a driver', function(){[m
+[32m+[m[32m    beforeEach(()=>{[m
+[32m+[m[32m        cy.viewport("macbook-11")[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('Login',()=>{[m
+[32m+[m[32m        cy.visit('https://deliverydev.quickeats.co.uk/login')[m
+[32m+[m[32m        cy.get('input[type="email"]').type('khanmuhammadmalik@gmail.com').get('[type="password"]').type('123456')[m
+[32m+[m[32m        cy.get('[type="checkbox"]').check()[m
+[32m+[m[32m        cy.get('.btn').contains('Sign in').should('be.visible').click()[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('view rider details', ()=>{[m
+[32m+[m[32m        cy.get('.main_side > :nth-child(5) > .nav-link').click().wait(3000)[m
+[32m+[m[32m        cy.get('.form-control').type('ameerimtiaz@gmail.com',{force:true}).scrollIntoView()[m
+[32m+[m[32m        cy.get('.search > :nth-child(3)').contains('Search').dblclick({force:true})[m
+[32m+[m[32m        cy.wait(3000)[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').contains('39')[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').find('[class="btn-group mr-2"]')[m
+[32m+[m[32m        .find('[class="btn btn-sm btn-info me-2"]').contains('Detail').click({force:true}).wait(3000).go('back')[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('view rider earnings', ()=>{[m
+[32m+[m[32m        cy.get('.main_side > :nth-child(5) > .nav-link').click().wait(3000)[m
+[32m+[m[32m        cy.get('.form-control').type('ameerimtiaz@gmail.com',{force:true}).scrollIntoView()[m
+[32m+[m[32m        cy.get('.search > :nth-child(3)').contains('Search').dblclick({force:true})[m
+[32m+[m[32m        cy.wait(3000)[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').find('[class="btn-group mr-2"]')[m
+[32m+[m[32m        .find('[class="btn btn-sm btn-warning me-2"]').contains('View').click({force:true}).wait(3000).go('back')[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('Edit Rider details', ()=>{[m
+[32m+[m[32m        cy.get('.main_side > :nth-child(5) > .nav-link').click().wait(3000)[m
+[32m+[m[32m        cy.get('.form-control').type('ameerimtiaz@gmail.com',{force:true}).scrollIntoView()[m
+[32m+[m[32m        cy.get('.search > :nth-child(3)').contains('Search').dblclick({force:true})[m
+[32m+[m[32m        cy.wait(3000)[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').find('[class="btn-group mr-2"]')[m
+[32m+[m[32m        .find('[class="btn btn-sm btn-secondary me-2"]').contains('Edit').click({force:true}).wait(3000)[m
+[32m+[m[32m        cy.get(':nth-child(3) > .form-control').clear().type('+923034074618',{force: true})[m
+[32m+[m[32m        cy.get('form > :nth-child(10)').contains('is buzy').get(':nth-child(10) > #flexCheckDefault').scrollIntoView().check()[m
+[32m+[m[32m        cy.get('form > :nth-child(11)').contains('availability').get(':nth-child(11) > #flexCheckDefault').check()[m
+[32m+[m[32m        cy.get('form > :nth-child(12)').contains('Is Active').get(':nth-child(12) > #flexCheckDefault').check()[m
+[32m+[m[32m        cy.get('form > :nth-child(13)').contains('Is Block').get(':nth-child(13) > #flexCheckDefault').check()[m
+[32m+[m[32m        cy.get('.btn').contains('Submit').click().wait(3000).go('back')[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('view rider details', ()=>{[m
+[32m+[m[32m        cy.get('.main_side > :nth-child(5) > .nav-link').click().wait(3000)[m
+[32m+[m[32m        cy.get('.form-control').type('ameerimtiaz@gmail.com',{force:true}).scrollIntoView()[m
+[32m+[m[32m        cy.get('.search > :nth-child(3)').contains('Search').dblclick({force:true})[m
+[32m+[m[32m        cy.wait(3000)[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').find('[class="btn-group mr-2"]')[m
+[32m+[m[32m        .find('[class="btn btn-sm btn-info me-2"]').contains('Detail').click({force:true}).wait(3000).go('back')[m
+[32m+[m[32m    })[m
+[32m+[m[32m    it('view Rider Location', ()=>{[m
+[32m+[m[32m        cy.get('.main_side > :nth-child(5) > .nav-link').click().wait(3000)[m
+[32m+[m[32m        cy.get('.form-control').type('ameerimtiaz@gmail.com',{force:true}).scrollIntoView()[m
+[32m+[m[32m        cy.get('.search > :nth-child(3)').contains('Search').dblclick({force:true})[m
+[32m+[m[32m        cy.wait(3000)[m
+[32m+[m[32m        cy.xpath('//*[@id="app"]/div/div/div[2]/main/div/div/div[3]/div/table/tbody/tr[1]').find('[class="text-start"]').find('[class="btn-group mr-2"]')[m
+[32m+[m[32m        .find('[class="btn btn-sm btn-success me-2"]').contains('Rider Location')
